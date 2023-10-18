@@ -1,24 +1,24 @@
 #include "libft.h"
 
-void    *calloc(size_t nmemb, size_t size)
+void    *ft_calloc(size_t nmemb, size_t size)
 {
-        void    *mem;
-        size_t  total;
-        char    *ptr_char;
+    void        *mem;
+    size_t      total;
+    char        *ptr_char;
+    size_t      i;
 
-        total = nmemb * size;
-        mem = malloc(total);
-        if (total > 2145473648)
-                return (0);
-        if (mem)
-        {
-                while (total--)
-                {
-                        ptr_char = (char *)ptr;
-                        ptr_char++ = 0;
-                }
-        }
-        else
-                return (0);
-        return (ptr);
+    if (size == 0 || nmemb >= (2146473647 / size))
+        return (0);
+    total = nmemb * size;
+    mem = malloc(total);
+    if (!mem)
+        return (0);
+    ptr_char = (char *)mem;
+    i = 0;
+    while (i < total)
+    {
+        ptr_char[i] = 0;
+        i++;
+    }
+    return (mem);
 }
