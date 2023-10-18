@@ -4,17 +4,21 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
 {
         const char *b;
         const char *l;
-   
+   	size_t temp;
         if (!*little)
                 return (char *)big;
-        while (*big && len)
+        while (*big && len != 0)
         {
                 b = big;
                 l = little;
+                temp = len;
                 while (*b && *l && *b == *l)
                 {
+                   	if(temp == 0)
+                        	break;
                         b++;
                         l++;
+                        temp--;
                 }
                 if (!*l)
                         return ((char *)big);
@@ -23,15 +27,3 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
         }
         return (0);
 }
-
-/*
-#include <stdio.h>
-int     main()
-{
-        const char big[] = "Guilherme Braga string";
-        const char little[] = "string";
-
-        printf("%s", ft_strnstr(big, little, 25));
-        return (0);
-}
-*/

@@ -1,29 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gsaladri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/10 11:45:38 by gsaladri          #+#    #+#             */
+/*   Updated: 2023/10/10 11:45:58 by gsaladri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void	*ft_bzero(void *ptr, size_t x)
 {
-        size_t  i;
-        unsigned char *mem;
+	size_t		i;
+	unsigned char	*p;
 
-        i = 0;
-        mem = (unsigned char *)s;
-        while (i < n)
-        {
-                mem[i] = '\0';
-                i++;
-        }
+	i = 0;
+	p = (unsigned char *)ptr;
+	while (i < x)
+	{
+		p[i] = '\0';
+		i++;
+	}
+	return (ptr);
 }
-
-/*
-#include <stddef.h>
-#include <stdio.h>
-
-int     main()
-{
-        char    str[] = "Guilherme";
-
-        ft_bzero(str, 5);
-        printf("%s", str);
-        return (0);
-}
-*/
