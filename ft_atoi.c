@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gsaladri <gsaladri@student.42porto.co      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/19 20:25:15 by gsaladri          #+#    #+#             */
+/*   Updated: 2023/10/19 20:25:19 by gsaladri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int result;
-	int sign;
-	int i;
+	int	result;
+	int	sign;
+	int	i;
 
 	result = 0;
 	sign = 1;
@@ -15,9 +27,9 @@ int	ft_atoi(const char *str)
 	{
 		sign = -1;
 		i++;
-	} 
-	else if (str[i] == '+') 
-        	i++;
+	}
+	else if (str[i] == '+')
+		i++;
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		result = result * 10 + (str[i] - 48);
